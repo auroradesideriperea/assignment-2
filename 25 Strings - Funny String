@@ -1,0 +1,40 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the funnyString function below.
+def funnyString(s):
+    for t in range(q):
+        sl, dsl, rl, drl = [], [], [], []
+        #string
+        for c in s:
+            sl.append(ord(c))
+        for i in range(len(sl)-1):
+            dsl.append(abs(sl[i]-sl[i+1]))
+        #reversed string
+        for c in reversed(s):
+            rl.append(ord(c))
+        for ii in range(len(rl)-1):
+            drl.append(abs(rl[ii]-rl[ii+1]))
+        #funny or not?
+        if dsl==drl: return('Funny')
+        else: return('Not Funny')
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input())
+
+    for q_itr in range(q):
+        s = input()
+
+        result = funnyString(s)
+
+        fptr.write(result + '\n')
+
+    fptr.close()
