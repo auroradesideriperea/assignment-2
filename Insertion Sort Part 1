@@ -1,0 +1,27 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the insertionSort1 function below.
+def insertionSort1(n, arr):
+    N = arr[-1]
+    i = n-2
+    #positions to be shifted
+    while (N<arr[i]) and (i>=0):
+        arr[i+1] = arr[i]
+        print(*arr)
+        i -= 1
+    #once in the right position
+    arr[i+1] = N
+    print(*arr)
+
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    insertionSort1(n, arr)
