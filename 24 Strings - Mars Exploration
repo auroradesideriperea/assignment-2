@@ -1,0 +1,27 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the marsExploration function below.
+def marsExploration(s):
+    C = 0
+    R = list(s)
+    S = list('SOS'*int(len(s)/3))
+    for i in range(len(R)):
+        if R[i] != S[i]: C += 1 
+    return(C)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = marsExploration(s)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
