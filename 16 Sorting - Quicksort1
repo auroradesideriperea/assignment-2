@@ -1,0 +1,31 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the quickSort function below.
+def quickSort(arr):
+    p = arr[0]
+    l, e, r = [], [], []
+    for x in arr:
+        if x < p: l.append(x)
+        elif x > p: r.append(x)
+        else: e.append(x)
+    return (l+e+r)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = quickSort(arr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
